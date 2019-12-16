@@ -1,0 +1,62 @@
+{
+  "name": "by-tools-doc",
+  "version": "1.0.0",
+  "description": "by-tools doc",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "cross-env TS_NODE_PROJECT='build/tsconfig.node.json' ENV='development' DOMAIN='development' webpack-dev-server --config build/webpack/webpack.dev.config.ts",
+    "build": "npm run icon && cross-env TS_NODE_PROJECT='build/tsconfig.node.json' ENV='production' DOMAIN='production' webpack --config build/webpack/webpack.prod.config.ts --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/by-ui/by-tools-doc.git"
+  },
+  "author": "xiaokangzheng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/by-ui/by-tools-doc/issues"
+  },
+  "homepage": "https://github.com/by-ui/by-tools-doc#readme",
+  "dependencies": {
+    "by-ui-style": "0.0.5",
+    "vue": "^2.6.11",
+    "vue-router": "^3.0.6",
+    "vue-template-compiler": "^2.6.10",
+    "vue-by-ui": "0.0.9"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/helper-module-imports": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/runtime": "^7.4.5",
+    "@types/friendly-errors-webpack-plugin": "^0.1.1",
+    "@types/node": "^11.13.7",
+    "@types/optimize-css-assets-webpack-plugin": "^1.3.4",
+    "@vue/babel-preset-jsx": "^1.1.1",
+    "babel-loader": "^8.0.5",
+    "clean-webpack-plugin": "^2.0.1",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.1",
+    "file-loader": "^5.0.2",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.1",
+    "ts-loader": "^5.4.3",
+    "typescript": "^3.6.4",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "url-loader": "^1.1.2",
+    "vue-loader": "^15.7.0",
+    "vue-property-decorator": "^8.1.0",
+    "vue-tsx-support": "^2.3.0",
+    "webpack": "^4.41.1",
+    "webpack-cli": "^3.3.1",
+    "webpack-dev-server": "^3.3.1",
+    "webpack-merge": "^4.2.1"
+  }
+}
