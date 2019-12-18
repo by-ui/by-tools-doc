@@ -1,7 +1,7 @@
 const path = require('path');
 const merge = require('webpack-merge');
 
-const baseCfg = require('./webpack.base.config');
+const baseCfg = require('./webpack.base.config.ts');
 
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -14,8 +14,6 @@ module.exports = merge(baseCfg, {
     mode: 'production',
     output: {
         path: path.resolve('dist'),
-        filename: `[name].[contenthash].${timeReverse}.js`,
-        chunkFilename: `[name].[contenthash].${timeReverse}.js`,
         publicPath: './'
     },
     devtool: false,
@@ -24,9 +22,7 @@ module.exports = merge(baseCfg, {
         new CleanWebpackPlugin(),
         new HtmlPlugin({
             filename: "index.html",
-            title: "123",
             template: path.resolve("src/index.html"),
-            favicon: './favicon.ico',
             showErrors: true,
         }),
     ],

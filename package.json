@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "cross-env TS_NODE_PROJECT='build/tsconfig.node.json' ENV='development' DOMAIN='development' webpack-dev-server --config build/webpack/webpack.dev.config.ts",
-    "build": "npm run icon && cross-env TS_NODE_PROJECT='build/tsconfig.node.json' ENV='production' DOMAIN='production' webpack --config build/webpack/webpack.prod.config.ts --progress"
+    "build": "cross-env TS_NODE_PROJECT='build/tsconfig.node.json' ENV='production' DOMAIN='production' webpack --config build/webpack/webpack.prod.config.ts --progress"
   },
   "repository": {
     "type": "git",
