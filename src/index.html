@@ -8,6 +8,14 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
     <title>By-tools Doc</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script>
+        function toAnchor(target) {
+            let offsetTop = document.getElementById(target).offsetTop
+            document.getElementById("container").scrollTo(0, offsetTop - 120, 800)
+            let url = window.location.href.split('#').length === 2 ? window.location.href + "#" + target : window.location.href.split('#')[0] + "#" + window.location.href.split('#')[1] + "#" + target;
+            history.pushState('', '', url);
+        }
+    </script>
 </head>
 
 <body>

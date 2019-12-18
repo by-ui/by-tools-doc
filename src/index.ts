@@ -6,6 +6,12 @@ import App from './app.vue';
 import './packages/by-ui'
 import 'by-ui-style/src/index.scss'
 import './styles/main.scss';
+import '../node_modules/highlightjs/styles/a11y-dark.css';
+/*****************************/
+
+/************ 组件 ************/
+import './commponents/index.ts';
+/*****************************/
 
 new Vue({
     el: '#app',

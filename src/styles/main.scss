@@ -54,11 +54,12 @@ textarea {
     font-family: Arial, Helvetica, '微软雅黑', '宋体';
 }
 
-ul{
+ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    li{
+
+    li {
         padding: 0;
         outline: none;
     }
@@ -86,4 +87,18 @@ ul{
     background: rgba(#000, 0.05);
     border-radius: 5px;
     // background: #EDEDED;
+}
+
+.highlight {
+    background-color: #283646;
+    color: #ddd;
+    padding: 25px;
+    margin: 20px 0;
+}
+
+.chunk {
+    background-color: #eee;
+    font-weight: 700;
+    padding: 25px;
+    margin: 20px 0;
 }

@@ -2,7 +2,7 @@ import { RouteConfig } from 'vue-router';
 
 const routes: RouteConfig[] = [
     {
-        path: '/index',
+        path: '/',
         name: 'index',
         component: () => import(/* webpackChunkName: "modules/index" */ '@/pages/index/index.vue'),
     },
