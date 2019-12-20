@@ -15,6 +15,7 @@ module.exports = merge(baseCfg, {
     output: {
         path: path.resolve('docs'),
         filename: `[name].[contenthash].js`,
+        publicPath: './'
     },
     devtool: false,
     stats: false,
