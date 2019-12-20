@@ -1,5 +1,9 @@
 <template>
     <div class="slide-bar by-sidebar col-sm-24 col-md-4">
+        <by-input v-model="search"
+                  placeholder="请输入内容"
+                  class="search-input">
+        </by-input>
         <nav class="by-nav">
             <div v-for="(item,index) in list"
                  :key="index">
@@ -22,48 +26,15 @@
     </div>
 </template>
 <script lang="ts">
-    import { Vue, Component } from "vue-property-decorator";
+    import { Vue, Component, Watch } from "vue-property-decorator";
+    import navList from './list';
 
     @Component
     export default class Appleft extends Vue {
 
-        list = [
-            {
-                title: 'Date 日期',
-                groups: [
-                    {
-                        title: '日期格式化',
-                        link: 'ge-shi-hua-ri-qi',
-                    },
-                    {
-                        title: '获取周范围',
-                        link: 'huo-qu-dang-qian-zhou-de-suo-you-tian-shu',
-                    }
-                ]
-            },
-            {
-                title: 'Phone 手机号',
-                groups: [
-                    {
-                        title: '格式化手机号',
-                        link: 'ge-shi-hua-shou-ji-hao',
-                    },
-                    {
-                        title: '加密手机号',
-                        link: 'jia-mi-shou-ji-hao',
-                    }
-                ]
-            },
-            {
-                title: 'Money 货币相关',
-                groups: [
-                    {
-                        title: '转中文大写',
-                        link: 'jiang-huo-bi-shu-zi-zhuan-zhong-wen-han-zi-da-xie',
-                    },
-                ]
-            }
-        ]
+        search = '';
+
+        list = navList;
 
         toggleMenu(event: any) {
             const parentNode = event.target.parentNode
@@ -76,6 +47,35 @@
 
         handleClickNavItem(item: any) {
             toAnchor(item.link);
+        }
+
+        /**
+         * 根据输入的内容过滤关键词
+         */
+        filterListWithKeyword(keyWord: string) {
+            keyWord = keyWord.toLowerCase();
+            navList.map((item: any) => {
+                if (item.title.toLowerCase().includes(keyWord)) {
+                    this.list.push(item);
+                } else {
+                    item.groups.map((sitem: any) => {
+                        if (sitem.title.toLowerCase().includes(keyWord)) {
+                            this.list.push(item);
+                        }
+                    })
+                }
+            })
+        }
+
+        @Watch('search')
+        onSearchChange(newVal: string) {
+            if (newVal) {
+                this.list = [];
+                this.filterListWithKeyword(newVal);
+            }
+            else {
+                this.list = navList;
+            }
         }
     }
 </script>
@@ -91,6 +91,16 @@
         background-color: #fff;
         border-right: 1px solid $grey-100;
         z-index: 99;
+    }
+
+    .search-input {
+        padding: 0 24px 8px;
+        margin-bottom: 20px;
+        /deep/ input {
+            border-radius: 0;
+            border: medium none;
+            border-bottom: 2px solid #8dabc4;
+        }
     }
 
     .by-nav {
