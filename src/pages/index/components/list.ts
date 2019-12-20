@@ -5,6 +5,10 @@ export default [
             {
                 title: '防抖函数',
                 link: 'fang-dou-han-shu',
+            },
+            {
+                title: '节流函数',
+                link: 'jie-liu-han-shu',
             }
         ]
     },

@@ -40,3 +40,39 @@ byfunction.debounce(()=>{
 // ...
 ```
 :::
+
+
+> ## 节流函数
+
+::: chunk
+``` js
+byfunction.throttle(func: Function, delay: number);
+```
+:::
+
+#### 引入版本
+
+ `1.0.0`
+
+ 
+#### 参数
+
+**func:** **[_Function_]** 需要执行的函数
+
+**delay:** **[_number_]** 节流间隔时间，毫秒数
+
+#### 返回
+
+**func:** **[_Function_]**: 返回新的节流函数
+
+::: demojs
+``` js
+
+import { byfunction } from 'by-tools';
+
+byfunction.throttle(()=>{
+    console.log(1);
+}, 750);
+
+```
+:::
