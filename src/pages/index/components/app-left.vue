@@ -17,6 +17,8 @@
                                 <a class="by-nav__component"
                                    href="javascript:void(0)"
                                    @click="handleClickNavItem(groups)">{{ groups.title }}</a>
+                                   <!-- <router-link class="by-nav__component"
+                                         :to="linkUrl()">{{ groups.title }}</router-link> -->
                             </li>
                         </ul>
                     </div>
@@ -48,7 +50,10 @@
         handleClickNavItem(item: any) {
             toAnchor(item.link);
         }
-
+        
+        linkUrl(){
+            return `/#/jiang-huo-bi-shu-zi-zhuan-zhong-wen-han-zi-da-xie`
+        }
         /**
          * 根据输入的内容过滤关键词
          */
