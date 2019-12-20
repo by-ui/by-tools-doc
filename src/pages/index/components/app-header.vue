@@ -1,6 +1,6 @@
 <template>
     <div class="app-header">
-        <a href="/">By-tools</a>
+        <a href="/"></a>
     </div>
 </template>
 <script lang="ts">
@@ -19,7 +19,12 @@
         a {
             font-size: 26px;
             color: #5f5f5f;
-            border-bottom: 2px solid #207dff;
+            background-image: url("~@/assets/images/logo.svg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 270px;
+            height: 30px;
+            margin: 10px 0;
         }
     }
 </style>
