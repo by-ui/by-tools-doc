@@ -13,7 +13,7 @@ const timeReverse = new Date().getTime().toString().split('').reverse().join('')
 module.exports = merge(baseCfg, {
     mode: 'production',
     output: {
-        path: path.resolve('dist'),
+        path: path.resolve('docs'),
         publicPath: './'
     },
     devtool: false,
