@@ -3,8 +3,11 @@
         <app-header></app-header>
         <div class="content row">
             <app-left></app-left>
-            <div class="container col-sm-24 col-md-20" id="container">
+            <div class="container col-sm-24 col-md-20"
+                 id="container">
                 <div class="container-dv">
+                    <by-function class="md"></by-function>
+                    <by-data class="md"></by-data>
                     <by-date class="md"></by-date>
                     <by-phone class="md"></by-phone>
                     <by-money class="md"></by-money>
@@ -19,6 +22,8 @@
     import appHeader from "./components/app-header.vue";
     import appLeft from "./components/app-left.vue";
 
+    import byFunction from './markdown/byFunction.md';
+    import byData from './markdown/byData.md';
     import byDate from './markdown/byDate.md';
     import byPhone from './markdown/byPhone.md';
     import byMoney from './markdown/byMoney.md';
@@ -28,6 +33,8 @@
             appHeader,
             appLeft,
 
+            byFunction,
+            byData,
             byDate,
             byPhone,
             byMoney,
@@ -39,7 +46,7 @@
 <style lang="scss" scoped>
     .index {
         .content {
-            padding: 25px 10px;
+            padding: 0px 10px;
             .container {
                 padding: 25px 35px;
                 overflow-y: scroll;
@@ -57,6 +64,7 @@
                 }
                 /deep/ strong {
                     color: #3492ff;
+                    font-weight: 600;
                 }
                 /deep/ blockquote {
                     border-left: 4px solid #3492ff;
