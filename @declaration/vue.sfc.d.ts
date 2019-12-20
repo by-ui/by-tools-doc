@@ -8,3 +8,11 @@ declare module '*.vue' {
     import Vue from 'vue';
     export default Vue;
 }
+
+//==============================================
+//
+//          Md单文件组件类型申明
+//
+//==============================================
+
+declare module '*.md';
