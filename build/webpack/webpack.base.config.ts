@@ -17,6 +17,10 @@ const striptags = require('./tools/strip-tags');
 const mode = process.env.ENV;
 const isProduction = (mode === "production");
 
+//开发环境下不单独提取css
+const styleLoader =
+    mode === 'production' ? MiniCssExtractPlugin.loader : 'style-loader';
+
 module.exports = {
     entry: {
         index: [path.resolve("src/index.ts")]
@@ -71,31 +75,38 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(sa|sc|c)ss$/,
+                test: /\.css$/,
                 use: [
+                    styleLoader,
                     {
-                        loader: MiniCssExtractPlugin.loader,
+                        loader: 'css-loader',
                         options: {
-                            hmr: !isProduction,
-                        },
+                            sourceMap: true
+                        }
                     },
+                ]
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    styleLoader,
                     {
-                        loader: "css-loader",
+                        loader: 'css-loader',
                         options: {
-                            sourceMap: !isProduction
+                            sourceMap: true
                         }
                     },
                     {
-                        loader: "sass-loader",
+                        loader: 'sass-loader',
                         options: {
-                            sourceMap: !isProduction
+                            sourceMap: true
                         }
-                    },
+                    }
                 ]
             }
             , {
                 test: /\.(png|jpe?g|gif|svg)$/,
-                include: /image/,
+                include: /images/,
                 loader: "url-loader",
                 query: {
                     limit: 1,
