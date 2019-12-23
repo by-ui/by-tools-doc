@@ -18,6 +18,7 @@
 </template>
 <script lang="ts">
     import { Vue, Component } from "vue-property-decorator";
+    import { phone, date, money, byfunction } from 'by-tools';
 
     import appHeader from "./components/app-header.vue";
     import appLeft from "./components/app-left.vue";
@@ -40,8 +41,7 @@
             byMoney,
         }
     })
-    export default class Index extends Vue {
-    }
+    export default class Index extends Vue { }
 </script>
 <style lang="scss" scoped>
     .index {
