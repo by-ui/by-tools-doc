@@ -5,7 +5,7 @@
 
 ::: chunk
 ``` js
-byfunction.debounce(func: Function, wait: number);
+byfunction.debounce(func: Function, wait: number, immediate?: boolean);
 ```
 :::
 
@@ -20,6 +20,8 @@ byfunction.debounce(func: Function, wait: number);
 
 **wait:** **[_number_]** 防抖间隔时间，毫秒数
 
+**immediate:** **[_boolean_]** 是否立即执行，默认 false
+
 #### 返回
 
 **func:** **[_Function_]**: 返回新的抖动函数
@@ -33,6 +35,7 @@ byfunction.debounce(()=>{
     console.log(1);
 }, 750);
 
+// --- after 750 ms  [if immediate = false]
 // => 1
 // --- after 750 ms
 // => 1
