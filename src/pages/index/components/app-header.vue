@@ -1,9 +1,9 @@
 <template>
-    <div class="app-header">
-        <a href="/">
+    <div class="app-header" @click="onHandellClickLogo">
+        <router-link :to="'/'">
             <img src="@/assets/images/logo.svg"
                  alt="">
-        </a>
+        </router-link>
     </div>
 </template>
 <script lang="ts">
@@ -11,6 +11,10 @@
 
     @Component
     export default class Appheader extends Vue {
+        onHandellClickLogo(){
+            const container = document.getElementById("container");
+            container && container.scrollTo(0, 0);
+        }
     }
 </script>
 <style lang="scss" scoped>
@@ -25,7 +29,7 @@
             width: 270px;
             height: 30px;
             margin: 10px 0;
-            img{
+            img {
                 width: 100%;
             }
         }
