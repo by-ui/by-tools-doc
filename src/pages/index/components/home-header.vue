@@ -34,7 +34,7 @@
 
         handleClickDoc() {
             this.$router.push({
-                name: 'index'
+                name: 'doc'
             });
         }
 

@@ -15,7 +15,7 @@
             const container = document.getElementById("container");
             container && container.scrollTo(0, 0);
             this.$router.push({
-                name: 'home'
+                name: 'index'
             })
         }
     }

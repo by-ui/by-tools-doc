@@ -1,75 +1,100 @@
 <template>
-    <div class="index">
-        <app-header></app-header>
-        <div class="content row">
-            <app-left></app-left>
-            <div class="container col-sm-24 col-md-20"
-                 id="container">
-                <div class="container-dv">
-                    <by-function class="md"></by-function>
-                    <by-data class="md"></by-data>
-                    <by-date class="md"></by-date>
-                    <by-phone class="md"></by-phone>
-                    <by-money class="md"></by-money>
-                </div>
-            </div>
+    <div class="home">
+        <home-header></home-header>
+        <div class="container">
+            <mk-using class="full-width"></mk-using>
+            <mk-babel class="full-width"></mk-babel>
+            <ul class="s-item">
+                <li class="title">WHY BY-TOOLS?</li>
+                <li>
+                    <p>
+                        BY-TOOLS 消除了处理数组，数字，对象，字符串等的麻烦，从而使JavaScript或项目结构变得更加简易。
+                    </p>
+                </li>
+                <li>
+                    > FUNCTION 公共函数
+                </li>
+                <li>
+                    > DATA 数据管理
+                </li>
+                <li>
+                    > DATE 日期管理
+                </li>
+                <li>
+                    > PHONE 手机号
+                </li>
+                <li>
+                    > MONEY 货币
+                </li>
+            </ul>
+            <ul class="s-item">
+                <li class="title">Support</li>
+                <li>
+                    <p>Tested in Chrome 74-75, Firefox 66-67, IE 11, Edge 18, Safari 11-12, & Node.js 8-12.</p>
+                </li>
+            </ul>
+            <ul class="s-item">
+                <li class="title">Suggestion</li>
+                <li>
+                    <p>如果你有任何想法可以补充或者完善 by-tools 库的话，请将你的想法提交至 <a target="_blank" href="https://github.com/by-ui/by-tools/issues">ISSUE</a> 。</p>
+                </li>
+            </ul>
+
         </div>
     </div>
 </template>
 <script lang="ts">
     import { Vue, Component } from "vue-property-decorator";
-    import { phone, date, money, byfunction } from 'by-tools';
 
-    import appHeader from "./components/app-header.vue";
-    import appLeft from "./components/app-left.vue";
-
-    import byFunction from './markdown/byFunction.md';
-    import byData from './markdown/byData.md';
-    import byDate from './markdown/byDate.md';
-    import byPhone from './markdown/byPhone.md';
-    import byMoney from './markdown/byMoney.md';
+    import homeHeader from './components/home-header.vue';
+    import mkUsing from './components/using.md';
+    import mkBabel from './components/babel.md';
 
     @Component({
         components: {
-            appHeader,
-            appLeft,
-
-            byFunction,
-            byData,
-            byDate,
-            byPhone,
-            byMoney,
+            homeHeader,
+            mkUsing,
+            mkBabel
         }
     })
-    export default class Index extends Vue { }
+    export default class Home extends Vue {
+    }
 </script>
 <style lang="scss" scoped>
-    .index {
-        .content {
-            padding: 0px 10px;
-            .container {
-                padding: 25px 35px;
-                overflow-y: scroll;
-                height: calc(100vh - 110px);
-                .md {
-                    margin-bottom: 30px;
+    .home {
+        background-color: #eee;
+        height: 100%;
+        overflow-y: scroll;
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 40px;
+            box-shadow: 0 4px 4px 4px #dadada;
+            background-color: #fff;
+            .full-width {
+                width: 100%;
+                /deep/ .highlight {
+                    margin: 0;
                 }
-                h4 {
-                    margin-top: 10px;
-                    margin-bottom: 20px;
-                }
-                /deep/ p {
-                    margin: 20px 0;
-                    margin-left: 20px;
-                }
-                /deep/ strong {
-                    color: #3492ff;
+                /deep/ h1 {
+                    padding: 20px;
+                    font-size: 22px;
                     font-weight: 600;
                 }
-                /deep/ blockquote {
-                    border-left: 4px solid #3492ff;
-                    padding-left: 10px;
-                    margin: 30px 0;
+            }
+            .s-item {
+                margin: 0px 30px;
+                padding: 20px 0;
+                li {
+                    color: #5f5f5f;
+                    line-height: 32px;
+                    &.title {
+                        font-size: 24px;
+                    }
+                    p {
+                        margin: 20px 0;
+                        margin-bottom: 0;
+                    }
                 }
             }
         }
