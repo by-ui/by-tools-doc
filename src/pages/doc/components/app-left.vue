@@ -1,5 +1,5 @@
 <template>
-    <div class="slide-bar by-sidebar col-sm-24 col-md-4">
+    <div class="slide-bar by-sidebar col-xs-10 col-sm-4 col-md-4">
         <by-input v-model="search"
                   placeholder="请输入内容"
                   class="search-input">
@@ -94,6 +94,8 @@
         background-color: #fff;
         border-right: 1px solid $grey-100;
         z-index: 99;
+        overflow-y: scroll;
+        max-height: calc(100vh - 130px);
     }
 
     .search-input {
