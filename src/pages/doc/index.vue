@@ -3,7 +3,7 @@
         <app-header></app-header>
         <div class="content row">
             <app-left></app-left>
-            <div class="container col-sm-24 col-md-20"
+            <div class="container col-xs-14 col-sm-20 col-md-20"
                  id="container">
                 <div class="container-dv">
                     <by-function class="md"></by-function>
@@ -11,6 +11,7 @@
                     <by-date class="md"></by-date>
                     <by-phone class="md"></by-phone>
                     <by-money class="md"></by-money>
+                    <by-string class="md"></by-string>
                 </div>
             </div>
         </div>
@@ -18,7 +19,7 @@
 </template>
 <script lang="ts">
     import { Vue, Component } from "vue-property-decorator";
-    import { phone, date, money, byfunction } from 'by-tools';
+    import { phone, date, money, byfunction, bystring } from 'by-tools';
 
     import appHeader from "./components/app-header.vue";
     import appLeft from "./components/app-left.vue";
@@ -28,6 +29,7 @@
     import byDate from './markdown/byDate.md';
     import byPhone from './markdown/byPhone.md';
     import byMoney from './markdown/byMoney.md';
+    import byString from './markdown/byString.md';
 
     @Component({
         components: {
@@ -39,9 +41,15 @@
             byDate,
             byPhone,
             byMoney,
+            byString,
         }
     })
-    export default class Index extends Vue { }
+    export default class Index extends Vue { 
+
+        mounted(){
+            console.log(bystring.getQueryString('type'));
+        }
+    }
 </script>
 <style lang="scss" scoped>
     .index {
