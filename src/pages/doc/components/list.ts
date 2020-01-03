@@ -55,5 +55,14 @@ export default [
                 link: 'jiang-huo-bi-shu-zi-zhuan-zhong-wen-han-zi-da-xie',
             },
         ]
-    }
+    },
+    {
+        title: 'String 字符串相关',
+        groups: [
+            {
+                title: '获取浏览器GET参数',
+                link: 'huo-qu-liu-lan-qiget-can-shu'
+            }
+        ]
+    },
 ];
