@@ -46,9 +46,6 @@
     })
     export default class Index extends Vue { 
 
-        mounted(){
-            console.log(bystring.getQueryString('type'));
-        }
     }
 </script>
 <style lang="scss" scoped>
