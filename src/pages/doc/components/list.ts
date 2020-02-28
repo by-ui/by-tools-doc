@@ -31,6 +31,10 @@ export default [
             {
                 title: '获取周范围',
                 link: 'huo-qu-dang-qian-zhou-de-suo-you-tian-shu',
+            },
+            {
+                title: '获取时间范围',
+                link: 'huo-qu-shi-jian-fan-wei',
             }
         ]
     },
