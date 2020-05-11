@@ -71,3 +71,41 @@ console.log(phone.toEncryptMobule('13166289220','-'));
 
 ```
 :::
+
+> ## 手机号校验
+
+::: chunk
+``` js
+phone.has(phone:string); 
+```
+:::
+
+#### 引入版本
+
+ `1.0.0`
+
+#### 参数
+
+**phone:** **[_string_]** 手机号
+
+
+#### 返回
+
+ **[_bool_]**: 是否是手机号
+
+::: demojs
+``` js
+
+import { phone } from 'by-tools';
+
+console.log(phone.has('13166289220'));
+
+// => true
+
+
+console.log(phone.has('131662xxx'));
+
+// => false
+
+```
+:::
