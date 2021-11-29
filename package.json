@@ -20,7 +20,7 @@
   "dependencies": {
     "by-tools": "^1.1.29",
     "by-ui-style": "0.0.5",
-    "mavon-editor": "^2.7.7",
+    "mavon-editor": "^2.8.2",
     "vue": "^2.6.11",
     "vue-by-ui": "0.0.9",
     "vue-router": "^3.0.6",
